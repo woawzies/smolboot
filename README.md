@@ -2,7 +2,14 @@
 A simple bootloader that loads a x86 16-bit real mode kernel
 
 ## Who is this for?
-masochists who lwk want to write operating systems in real mode assembly lol
+Masochists who lwk want to write operating systems in real mode assembly lol
+
+## How it work
+`os.bin` is structured like this:
+| Section     | Bytes                    | Description |
+|-------------|-------------|-------------------------|
+| Boot sector | 0x000-0x1FF | Bootloader (first 512B) |
+| Kernel      | 0x200-end   | Kernel binary           |
 
 ## How do I build and run this?
 > [!NOTE]
