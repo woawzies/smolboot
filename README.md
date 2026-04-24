@@ -13,7 +13,7 @@ Masochists who lwk want to write operating systems in real mode assembly lol
 
 When the machine starts, the BIOS loads the first 512B (sector 0) into physical RAM address 0x7C00, and then jumps to that memory address.  
 Which would look something like this:  
-PC = 0x7C00 -> first instruction of bootloader  
+`PC = 0x7C00 -> first instruction of bootloader`  
 Then, the BIOS releases control to the bootloader in the boot sector.  
 The bootloader loads the kernel (sector 1 onwards) to physical address 0x1000 and does a jump to that location, handing off control to the kernel. (which you get to write!)  
 ya thats it i hope its correct
