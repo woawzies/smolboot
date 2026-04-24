@@ -6,16 +6,16 @@ Masochists who lwk want to write operating systems in real mode assembly lol
 
 ## How it work
 `os.bin` is structured like this:
-| Section     | Bytes                    | Description |
-|-------------|-------------|-------------------------|
-| Boot sector | 0x000-0x1FF | Bootloader (first 512B) |
-| Kernel      | 0x200-end   | Kernel binary           |
+| Sector | Section     | Bytes         | Description             |
+|--------|-------------|---------------|-------------------------|
+| 0      | Boot sector | `0x000-0x1FF` | Bootloader (first 512B) |
+| 1      | Kernel      | `0x200-end`   | Kernel binary           |
 
-When the machine starts, the BIOS loads the first 512B (sector 0) into physical RAM address `0x7C00`, and then jumps to that memory address.  
+When the machine starts, the BIOS loads the first 512B into physical RAM address `0x7C00` (sector 1), and then jumps to that memory address.  
 That would look something like this:  
-`PC = 0x7C00 -> first instruction of bootloader`  
-After that, the BIOS releases control to the bootloader in the boot sector.  
-The bootloader loads the kernel (sector 1 onwards) to physical address `0x1000` and does a jump to that address, handing off control to the kernel. (which you get to write!)  
+`PC = 0x7C00 -> first instruction of bootloader (cli)`  
+After that, the BIOS releases control to the bootloader.  
+The bootloader loads the kernel to physical address `0x1000` (sector 2 onwards) and does a jump to that address, handing off control to the kernel. (which you get to write!)  
 ya thats it i hope its correct
 ## How do I build and run this?
 > [!NOTE]
