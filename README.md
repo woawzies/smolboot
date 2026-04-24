@@ -1,6 +1,9 @@
 # smolboot
-A simple bootloader that loads a x86 16-bit real mode kernel, 
-for masochists who want to write operating systems in real mode assembly.
+A simple bootloader that loads a x86 16-bit real mode kernel
+
+## Who is this for?
+masochists who lwk want to write operating systems in real mode assembly lol
+
 ## How do I build and run this?
 > [!NOTE]
 > Use linux.
